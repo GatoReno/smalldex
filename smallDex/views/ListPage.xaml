@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="smallDex.views.ListPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10">
+            <Label Text="Pokemon!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <ListView x:Name="ListPoke"   
+                SelectionMode="None" 
+                      VerticalOptions="FillAndExpand"                     
+                        RowHeight="100"
+                      ItemTapped="GetPokes_ItemTapped"
+                  >
+
+                <ListView.ItemTemplate>
+
+
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Frame x:Name="frame" CornerRadius="10" OutlineColor="Black"
+                            BackgroundColor="white" Padding="0"  Margin="2,2,2,2"  >
+
+                                <StackLayout
+                                Orientation="Vertical"
+                                           Margin="10,10,10,10">
+
+
+                                    <StackLayout Orientation="Horizontal" 
+                                         
+                                              >
+
+
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+
+                                                <RowDefinition Height="Auto"  />
+                                               
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+
+
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding name}   "  
+                                          FontSize="Small"
+                                         Grid.Row="0" Grid.Column="0" />
+                                           
+
+                                
+                                        </Grid>
+                                    </StackLayout>
+
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

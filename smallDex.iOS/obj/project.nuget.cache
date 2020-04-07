@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "UJocyc0z1go55aDn1L0iQgh0+NPe5srGabQ2Edt1+A9Nvs4wUvewK3JzPzOpQ8P1slIR4ol/m5IY1GJiWgEGOg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Pepe\\source\\repos\\smallDex\\smallDex\\smallDex.iOS\\smallDex.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pepe\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Pepe\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
+  ],
+  "logs": []
+}

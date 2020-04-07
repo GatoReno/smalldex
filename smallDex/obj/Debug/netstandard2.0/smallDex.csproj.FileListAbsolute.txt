@@ -1,0 +1,16 @@
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\bin\Debug\netstandard2.0\smallDex.deps.json
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\bin\Debug\netstandard2.0\smallDex.dll
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\smallDex.csprojAssemblyReference.cache
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\views\ListPage.xaml.g.cs
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\smallDex.AssemblyInfoInputs.cache
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\smallDex.AssemblyInfo.cs
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\bin\Debug\netstandard2.0\ref\smallDex.dll
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\bin\Debug\netstandard2.0\smallDex.pdb
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\views\PokeInfo.xaml.g.cs
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\smallDex.csproj.CoreCompileInputs.cache
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\smallDex.dll
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\ref\smallDex.dll
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex\obj\Debug\netstandard2.0\smallDex.pdb
