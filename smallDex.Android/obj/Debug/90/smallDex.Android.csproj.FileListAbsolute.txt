@@ -449,6 +449,11 @@ C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\andro
 C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\android\src\mono\android\support\v7\widget\ViewStubCompat_OnInflateListenerImplementor.java
 C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\android\src\mono\MonoPackageManager_Resources.java
 C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\android\src\xamarin\essentials\fileProvider.java
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\res\mipmap-hdpi\ic_launcher.png
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\res\mipmap-mdpi\ic_launcher.png
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\res\mipmap-xhdpi\ic_launcher.png
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\res\mipmap-xxhdpi\ic_launcher.png
+C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\res\mipmap-xxxhdpi\ic_launcher.png
 C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\android\bin\packaged_resources
 C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\android\src\com\companyname\smalldex\R.java
 C:\Users\Pepe\source\repos\smallDex\smallDex\smallDex.Android\obj\Debug\90\android\typemap.jm.arm64-v8a.o

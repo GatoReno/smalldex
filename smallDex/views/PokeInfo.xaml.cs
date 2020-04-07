@@ -69,7 +69,26 @@ namespace smallDex.views
                         pokename.Text = json_d.name;
                         img.Source = json_d.sprites.front_default;
 
+                        pheight.Text = json_d.height.ToString();
+                        weight.Text = json_d.weight.ToString() ;
+                        stat1.Text = json_d.stats[0].stat.name;
+                        stat2.Text = json_d.stats[1].stat.name;
+                        stat3.Text = json_d.stats[2].stat.name;
 
+                        var types = json_d.types.Count();
+
+                        type.Text = json_d.types[0].type.name;
+
+                        if (types < 2)
+                        {
+                            type.Text = json_d.types[0].type.name;
+                            type1.IsVisible = false;
+                        }
+                        else {
+                            type.Text = json_d.types[0].type.name;
+                            type1.Text = json_d.types[1].type.name;
+                        }
+                       
 
 
                         break;

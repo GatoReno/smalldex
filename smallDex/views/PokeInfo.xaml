@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="smallDex.views.PokeInfo">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Margin="10,10,10,10">
             <Label Text="Poke Info!"
                 
@@ -16,8 +17,48 @@
 
             <Image
                 x:Name="img"
-                WidthRequest="50"
-                HeightRequest="50" />
-        </StackLayout>
+                WidthRequest="150"
+                HeightRequest="150" />
+
+                <Label
+               Text="Altura"
+                />
+                <Label
+                x:Name="pheight"
+                />
+                <Label
+               Text="Peso"
+                />
+                <Label
+                x:Name="weight"
+                />
+
+                <Label
+               Text="Habilidades"
+                />
+
+                <Label
+                x:Name="stat1"
+                />
+                <Label
+                x:Name="stat2"
+                />
+                <Label
+                x:Name="stat3"
+                />
+
+                <Label
+               Text="Tipo"
+                />
+                <Label
+                x:Name="type"
+                />
+                <Label
+                x:Name="type1"
+                />
+
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
