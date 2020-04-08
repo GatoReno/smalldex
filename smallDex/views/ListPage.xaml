@@ -14,14 +14,25 @@
             <Label
                 x:Name="lblError"
                 TextColor="IndianRed"
-                FontSize="Medium"
+                FontSize="Micro"
                 HorizontalOptions="CenterAndExpand"
                 IsVisible="False"/>
             <Entry
                 Placeholder="Encuntra a tu pokemon favorito"
                 x:Name="entName"
                 HorizontalOptions="Fill"
+                
                 />
+
+            <Button
+                FontSize="Micro"
+                    Text="VER POKEMON"
+                x:Name="btnpokmon"
+                Clicked="btnpokmon_Clicked"
+                HorizontalOptions="Fill"
+                IsVisible="False"/>
+
+
 
             <ListView x:Name="ListPoke"   
                 SelectionMode="None" 
@@ -79,7 +90,9 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Grid>
+            <Grid
+                VerticalOptions="FillAndExpand"                     
+                >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />

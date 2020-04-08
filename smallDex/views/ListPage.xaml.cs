@@ -25,7 +25,14 @@ namespace smallDex.views
             _ = GetPokesFromWeb(def);
             entName.TextChanged += entName_TextChangedEvent;
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            lblError.IsVisible = false;
+            btnpokmon.IsVisible = false;
+            entName.Text= "";
 
+        }
         private void entName_TextChangedEvent(object sender, TextChangedEventArgs e)
         {
            _ = entName_TextChanged();
@@ -34,28 +41,38 @@ namespace smallDex.views
         private async Task entName_TextChanged()
         {
             var pkn = entName.Text;
+            if (string.IsNullOrEmpty(pkn))
+            {
+
+            }
+            else { 
             var uri = "https://pokeapi.co/api/v2/pokemon/" + pkn;
             HttpClient client = new HttpClient();
             var responseMsg = await  client.GetAsync(uri);
 
-
-            switch (responseMsg.StatusCode)
+            if (responseMsg.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
-                case System.Net.HttpStatusCode.NotFound:
-                    lblError.IsVisible = true;
-                    lblError.Text = "Tu pokeon no existe,intenta otra ves";
-                    entName.Focus();
-                    break;
+                lblError.IsVisible = true;
+                lblError.Text = "Tu pokeon no existe,intenta otra ves";
+                entName.Focus();
+            }
+            else if (responseMsg.StatusCode == System.Net.HttpStatusCode.OK)
+            {
 
-                case System.Net.HttpStatusCode.OK:
-                    lblError.IsVisible = false;
-                    entName.Text = "";
-                    await Navigation.PushAsync(new PokeInfo(uri));
-                    break;
+                lblError.IsVisible = false;
+                //entName.Text = "";
+                btnpokmon.IsVisible = true;
+            }
+            else {
+                lblError.IsVisible = true;
+                lblError.Text = "Posible Error";
+                entName.Focus();
+            }
 
             }
 
-          
+
+
         }
 
         private async void GetPokes_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -138,6 +155,19 @@ namespace smallDex.views
         private void btnprev_Clicked(object sender, EventArgs e)
         {
             _ = GetPokesFromWeb(previous.ToString());
+        }
+
+        private void btnpokmon_Clicked(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(entName.Text))
+            {
+                entName.Focus();
+            }
+            else {
+                var ir = "https://pokeapi.co/api/v2/pokemon/" + entName.Text;
+                 Navigation.PushAsync(new PokeInfo(ir));
+
+            }
         }
     }
 }
