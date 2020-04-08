@@ -11,6 +11,18 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
+            <Label
+                x:Name="lblError"
+                TextColor="IndianRed"
+                FontSize="Medium"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="False"/>
+            <Entry
+                Placeholder="Encuntra a tu pokemon favorito"
+                x:Name="entName"
+                HorizontalOptions="Fill"
+                />
+
             <ListView x:Name="ListPoke"   
                 SelectionMode="None" 
                       VerticalOptions="FillAndExpand"                     
@@ -25,7 +37,7 @@
                         <ViewCell>
 
                             <Frame x:Name="frame" CornerRadius="10" OutlineColor="Black"
-                            BackgroundColor="white" Padding="0"  Margin="2,2,2,2"  >
+                            BackgroundColor="white" Padding="0"  Margin="5,5,5,5"  >
 
                                 <StackLayout
                                 Orientation="Vertical"
@@ -40,7 +52,7 @@
                                         <Grid>
                                             <Grid.RowDefinitions>
 
-                                                <RowDefinition Height="Auto"  />
+                                                <RowDefinition Height="*"  />
                                                
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
@@ -66,6 +78,34 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"  />
+
+                </Grid.RowDefinitions>
+
+                <Button
+                     Grid.Column="0"
+                    x:Name="btnprev"
+                    VerticalOptions="Fill"
+                    Clicked="btnprev_Clicked"
+                    Grid.Row="0"
+                    FontSize="Micro"
+                    Text="Previous"/>
+                <Button Text="Next"
+                        x:Name="btnnext"
+                        VerticalOptions="Fill"
+                        Clicked="btnnext_Clicked"
+                     Grid.Column="1"
+                        FontSize="Micro"
+                    Grid.Row="0"/>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

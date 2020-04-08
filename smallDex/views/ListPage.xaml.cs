@@ -15,10 +15,47 @@ namespace smallDex.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListPage : ContentPage
     {
+
+        public string next;
+        public object previous;
         public ListPage()
         {
             InitializeComponent();
-            _ = GetPokesFromWeb();
+            string def = "https://pokeapi.co/api/v2/pokemon/";
+            _ = GetPokesFromWeb(def);
+            entName.TextChanged += entName_TextChangedEvent;
+        }
+
+        private void entName_TextChangedEvent(object sender, TextChangedEventArgs e)
+        {
+           _ = entName_TextChanged();
+        }
+
+        private async Task entName_TextChanged()
+        {
+            var pkn = entName.Text;
+            var uri = "https://pokeapi.co/api/v2/pokemon/" + pkn;
+            HttpClient client = new HttpClient();
+            var responseMsg = await  client.GetAsync(uri);
+
+
+            switch (responseMsg.StatusCode)
+            {
+                case System.Net.HttpStatusCode.NotFound:
+                    lblError.IsVisible = true;
+                    lblError.Text = "Tu pokeon no existe,intenta otra ves";
+                    entName.Focus();
+                    break;
+
+                case System.Net.HttpStatusCode.OK:
+                    lblError.IsVisible = false;
+                    entName.Text = "";
+                    await Navigation.PushAsync(new PokeInfo(uri));
+                    break;
+
+            }
+
+          
         }
 
         private async void GetPokes_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -27,19 +64,13 @@ namespace smallDex.views
             await Navigation.PushAsync(new PokeInfo(content.url));
         }
 
-
-        public async Task GetPokesFromWeb() {
+    
+        public async Task GetPokesFromWeb(string ux) {
 
             try
             {
-                HttpClient client = new HttpClient();
-
-
-                var uri = "https://pokeapi.co/api/v2/pokemon/";
-
-
-
-                var responseMsg = await client.GetAsync(uri);
+                HttpClient client = new HttpClient();                 
+                var responseMsg = await client.GetAsync(ux);
 
 
 
@@ -67,12 +98,20 @@ namespace smallDex.views
                         HttpContent contentD = responseMsg.Content;
                         var xjsonD = await contentD.ReadAsStringAsync();
 
-
-                       
-                            var json_d = JsonConvert.DeserializeObject<PokeCallAll>(xjsonD);
-                            ListPoke.ItemsSource = json_d.results;
                         
 
+                            var json_d = JsonConvert.DeserializeObject<PokeCallAll>(xjsonD);
+                            ListPoke.ItemsSource = json_d.results;
+                            next = json_d.next;
+                            previous = json_d.previous;
+                                if (previous == null)
+                                {
+                                    btnprev.IsVisible = false;
+                                }
+                                else{
+                                    btnprev.IsVisible = true;
+                                }
+                            
 
 
 
@@ -89,6 +128,16 @@ namespace smallDex.views
                 //  CatorT.Text = "Ha habido un error";
                 return;
             }
+        }
+        
+        private void btnnext_Clicked(object sender, EventArgs e)
+        {
+            _ = GetPokesFromWeb(next);
+        }
+
+        private void btnprev_Clicked(object sender, EventArgs e)
+        {
+            _ = GetPokesFromWeb(previous.ToString());
         }
     }
 }
